@@ -1,14 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G1036" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AddToCartAnimation" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +21,62 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="car" translatesAutoresizingMaskIntoConstraints="NO" id="CYS-id-UMu">
+                                <rect key="frame" x="79" y="376" width="66" height="43"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="66" id="1gt-OI-fee"/>
+                                    <constraint firstAttribute="height" constant="43" id="jog-4P-OY3"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iye-aq-mKq">
+                                <rect key="frame" x="176" y="382" width="80" height="30"/>
+                                <state key="normal" title="Add To cart"/>
+                                <connections>
+                                    <action selector="addToCartClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QXP-zB-ToB"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NO0-jh-xL4">
+                                <rect key="frame" x="161" y="68" width="53" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="7Ja-Tj-jRe"/>
+                                    <constraint firstAttribute="width" constant="53" id="HWf-EX-tBh"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M11-NM-hPZ">
+                                <rect key="frame" x="165" y="173" width="44" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="lAa-Jy-9Se"/>
+                                </constraints>
+                                <state key="normal" title="Empty"/>
+                                <connections>
+                                    <action selector="emptyCartClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tp9-p9-Cg4"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.9978950701" blue="0.4770995535" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Iye-aq-mKq" firstAttribute="leading" secondItem="CYS-id-UMu" secondAttribute="trailing" constant="31" id="2Px-bx-IB1"/>
+                            <constraint firstItem="CYS-id-UMu" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="356" id="Jhd-f9-WOr"/>
+                            <constraint firstItem="NO0-jh-xL4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ocj-xv-NPL"/>
+                            <constraint firstItem="M11-NM-hPZ" firstAttribute="top" secondItem="NO0-jh-xL4" secondAttribute="bottom" constant="63" id="SKa-Tp-sXd"/>
+                            <constraint firstItem="Iye-aq-mKq" firstAttribute="centerY" secondItem="CYS-id-UMu" secondAttribute="centerY" id="d4X-31-WN7"/>
+                            <constraint firstItem="CYS-id-UMu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="63" id="fwv-YE-qvb"/>
+                            <constraint firstItem="M11-NM-hPZ" firstAttribute="centerX" secondItem="NO0-jh-xL4" secondAttribute="centerX" id="mDU-Ls-oTP"/>
+                            <constraint firstItem="NO0-jh-xL4" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="48" id="yAt-MN-3ut"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cartImage" destination="NO0-jh-xL4" id="RZE-wd-NDE"/>
+                        <outlet property="itemImage" destination="CYS-id-UMu" id="4c5-X7-XMK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="137.18140929535232"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="car" width="33" height="21"/>
+    </resources>
 </document>
